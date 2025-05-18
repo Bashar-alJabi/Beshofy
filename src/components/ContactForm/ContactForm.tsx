@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import HomeBubble from "../HomeBubble/HomeBubble";
@@ -46,8 +46,8 @@ export default function ContactPage() {
 			await emailjs.sendForm(
 				process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
 				process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+				formRef.current,
 				process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-				formRef.current as unknown as string
 			);
 			setSent(true);
 		} catch (error) {
