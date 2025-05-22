@@ -27,13 +27,15 @@ const Categories = () => {
 					<motion.div
 						key={i}
 						onClick={() => router.push(cat.link)}
+						initial={{ opacity: 0, scale: 0 }}
+						animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, delay: i * 0.2 } }}
 						whileHover={{ scale: 1.05, rotate: -1 }}
 						whileTap={{ scale: 0.95 }}
 						className="cursor-pointer backdrop-blur-sm bg-white/10 border border-white/20 rounded-xl p-6 shadow-xl hover:shadow-2xl text-white relative overflow-hidden"
 					>
-						<h2 className="text-2xl font-bold mb-2">{cat.title}</h2>
-						<p className="text-sm opacity-80">{cat.description}</p>
-
+						<h2 className="text-2xl font-bold mb-2 text-black">{cat.title}</h2>
+						<p className="text-sm">{cat.description}</p>
+						{/* bg-gradient-to-r from-black via-black to-black bg-clip-text text-transparent */}
 						{/* Decoration */}
 						<div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl rotate-12"></div>
 					</motion.div>
