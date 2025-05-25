@@ -1,8 +1,4 @@
-// app/shop/layout.tsx
-
-"use client";
-
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/context/Theme/theme-provider";
 import type { ReactNode } from "react";
 
 export default function ShopLayout({ children }: { children: ReactNode }) {

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Group } from "three";
 
-// 👜 حقيبة ثلاثية الأبعاد
 function BagModel() {
 	const groupRef = useRef<Group>(null);
 

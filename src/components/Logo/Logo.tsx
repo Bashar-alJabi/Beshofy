@@ -8,14 +8,10 @@ export default function Logo() {
 	const [userName, setUserName] = useState("");
 
 	useEffect(() => {
-        const storedName = localStorage.getItem("BeshofyUserName");
-        // if (storedName && storedName !== "You") {
-        if (storedName) {
-            setUserName(storedName+'fy');
-        } else {
-			setUserName('You')
-		}
-	}, [])
+		const storedName = localStorage.getItem("BeshofyUserName");
+		// if (storedName && storedName !== "You") {
+		if (storedName) setUserName(storedName);
+	}, []);
 
 	return (
 		<motion.div
@@ -24,21 +20,21 @@ export default function Logo() {
 			transition={{ duration: 0.8, ease: "easeOut" }}
 			className="fixed top-8 left-1/2 -translate-x-1/2 z-50"
 		>
-			{/* <div className="backdrop-blur-md bg-white/20 rounded-full px-4 py-2 shadow-lg border border-white/30"> */}
-				<Image
-					src="/Logo/Beshofy-Logo.png"
-					alt="Beshofy Logo"
-					width={130}
-					height={130}
-					className="object-contain pointer-events-none w-auto h-auto"
-					priority
-				/>
+			<Image
+				src="/Logo/Beshofy-Logo.png"
+				alt="Beshofy Logo"
+				width={130}
+				height={130}
+				className="object-contain pointer-events-none w-auto h-auto"
+				priority
+			/>
+			{userName !== "" && (
 				<p className="text-center font-semibold text-foreground">
 					with{" "}
-					<span className="text-primary-foreground">{userName}</span>
+					<span className="text-background">{userName}fy</span>
 					{/* {userName !== 'You' && <span>fy</span>} */}
 				</p>
-			{/* </div> */}
+			)}
 		</motion.div>
 	);
 }

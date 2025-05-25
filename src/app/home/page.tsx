@@ -4,7 +4,6 @@ import Background from "@/components/Background/Background";
 import Logo from "@/components/Logo/Logo";
 import FloatingNavbar from "@/components/Navbar/FloatingNavbar";
 import SocialLinks from "@/components/Socials/Socials";
-// import TickerBar from "@/components/TickerBar/TickerBar";
 
 export default function HomePage() {
 	return (
@@ -16,7 +15,6 @@ export default function HomePage() {
 				<AssistantBubble />
 				<Avatar />
 				<SocialLinks />
-				{/* <TickerBar /> */}
 			</main>
 		</>
 	);

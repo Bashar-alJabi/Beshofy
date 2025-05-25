@@ -14,21 +14,21 @@ export default function SocialLinks() {
             <a
                 href='https://instagram.com/yourpage'
                 target="_blank"
-                className="transition duration-300 text-white/50 hover:text-[#E1306C] hover:-rotate-12"
+                className="transition duration-300 text-background/50 hover:text-[#E1306C] hover:-rotate-12"
             >
                 <Instagram size={24} />
             </a>
             <a
                 href='https://tiktok.com/@yourpage'
                 target="_blank"
-                className="transition duration-300 text-white/50 hover:text-[#000000] hover:-rotate-12"
+                className="transition duration-300 text-background/50 hover:text-[#000000] hover:-rotate-12"
             >
                 <Music2 size={24} />
             </a>
             <a
                 href='https://facebook.com/yourpage'
                 target="_blank"
-                className="transition duration-300 text-white/50 hover:text-[#1877F2] hover:-rotate-12"
+                className="transition duration-300 text-background/50 hover:text-[#1877F2] hover:-rotate-12"
             >
                 <Facebook size={24} />
             </a>

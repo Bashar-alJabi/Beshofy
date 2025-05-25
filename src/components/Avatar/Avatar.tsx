@@ -60,20 +60,20 @@ export default function Avatar() {
 	const [messages, setMessages] = useState(defaultMessages);
 	const [index, setIndex] = useState(0);
 
+	// Name message
 	useEffect(() => {
 		const name = localStorage.getItem("BeshofyUserName");
 		if (name) {
-			// Get a random welcome message and replace {name} with the actual name
 			const randomWelcomeMessage = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)]
 				.replace("{name}", name);
 			setMessages(prev => [randomWelcomeMessage, ...prev]);
 		}
 	}, []);
 
+	// Time message
 	useEffect(() => {
 		const hour = new Date().getHours();
 		let timeMessages = [];
-		
 		if (hour < 12) {
 			timeMessages = morningMessages;
 		} else if (hour < 18) {
@@ -81,11 +81,11 @@ export default function Avatar() {
 		} else {
 			timeMessages = eveningMessages;
 		}
-		// Get a random message from the appropriate time period
 		const randomTimeMessage = timeMessages[Math.floor(Math.random() * timeMessages.length)];
 		setMessages(prev => [randomTimeMessage, ...prev]);
 	}, []);
 
+	// Weird message
 	useEffect(() => {
 		const interval = setInterval(() => {
 			// setIndex((prev) => (prev + 1) % messages.length);
@@ -101,8 +101,6 @@ export default function Avatar() {
 				alt="Avatar"
 				initial={{ y: 0, }}
 				animate={{ y: [0, -5, 0] }}
-				// whileHover={{ scale: 1.1 }}
-				// whileTap={{ rotate: -5 }}
 				transition={{ repeat: Infinity, duration: 2 }}
 				className="w-28"
 			/>
@@ -110,7 +108,7 @@ export default function Avatar() {
 				key={index}
 				initial={{ opacity: 0, y: 10 }}
 				animate={{ opacity: 1, y: 0 }}
-				className="max-w-xs sm:max-w-sm px-6 py-2 text-foreground font-semibold rounded-full text-center text-sm shadow-xl border border-white/20 bg-white/20 backdrop-blur-md relative overflow-hidden"
+				className="max-w-xs sm:max-w-sm px-6 py-2 text-foreground font-semibold rounded-full text-center text-sm shadow-xl border border-background/20 bg-background/20 backdrop-blur-md relative overflow-hidden"
 			>
 				{messages[index]}
 			</motion.div>

@@ -1,5 +1,4 @@
 import CustomCursor from "@/components/Cursor/Cursor";
-// import SplashScreen from "@/components/SplashScreen/SplashScreen";
 import { ScrollToTop } from "@/components/ScrollToTop/ScrollToTop";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -27,7 +26,6 @@ export default function RootLayout({
 				<link rel="icon" href="/Logo/By-Logo.png" />
 			</head>
 			<body className={`${poppins.variable}`}>
-				{/* <SplashScreen /> */}
 				<CustomCursor />
 				<ScrollToTop />
 				{children}

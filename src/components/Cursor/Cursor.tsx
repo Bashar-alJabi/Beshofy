@@ -1,21 +1,3 @@
-// "use client";
-// import { useEffect } from "react";
-
-// import fluidCursor from "@/hooks/use-FluidCursor";
-
-// const FluidCursor = () => {
-// 	useEffect(() => {
-// 		fluidCursor();
-// 	}, []);
-
-// 	return (
-// 		<div className="fixed top-0 left-0 z-2">
-// 			<canvas id="fluid" className="w-screen h-screen" />
-// 		</div>
-// 	);
-// };
-// export default FluidCursor;
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -59,8 +41,8 @@ export default function CustomCursor() {
 					repeat: Infinity,
 					ease: "easeInOut",
 				}}
-				className={`w-6 h-6 rounded-full backdrop-blur border border-white/30 transition-all duration-300 ${
-					isHovering ? "bg-white/20 mix-blend-difference" : "bg-white/10"
+				className={`w-6 h-6 rounded-full backdrop-blur border border-background/30 transition-all duration-300 ${
+					isHovering ? "bg-background/20 mix-blend-difference" : "bg-background/10"
 				}`}
 			/>
 		</motion.div>
