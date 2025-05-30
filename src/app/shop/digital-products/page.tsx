@@ -1,3 +1,4 @@
+import FallingDecorations from "@/components/Background/FallingDecorations";
 import DigitalProductsComp from "@/components/Pages/DigitalProductsComp";
 import { ThemeToggle } from "@/components/Theme/ThemeMode";
 import { ArrowLeft } from "lucide-react";
@@ -35,15 +36,18 @@ export default function DigitalProductsPage() {
 			{/* Header */}
 			<div className="max-w-5xl mx-auto text-center mb-8">
 				<h1 className="text-4xl font-bold mb-2">
-					Explore Unique Digital Creations
+					Dive into Unique Digital Creations
 				</h1>
 				<p className="text-foreground/50">
-					Ready-to-use designs for your brand, web, and social needs.
+					Ready-to-use designs for your brand, site & socials 🎨
 				</p>
 			</div>
 
 			{/* Content */}
 			<DigitalProductsComp />
+
+			{/* Falling Decoration */}
+			<FallingDecorations />
 		</div>
 	);
 }

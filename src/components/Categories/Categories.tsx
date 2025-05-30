@@ -6,12 +6,12 @@ import Link from "next/link";
 const categories = [
 	{
 		title: "Digital Products",
-		description: "Courses, Apps, Designs, Templates",
+		description: "Designs, Templates, Logos, ...",
 		link: "/shop/digital-products",
 	},
 	{
 		title: "Smart Files",
-		description: "Educational Sheets, Templates & Tools",
+		description: "Educational Sheets, Tools, ... ",
 		link: "/shop/smart-files",
 	},
 ];
@@ -36,7 +36,7 @@ const Categories = () => {
 							<h2 className="text-3xl font-bold mb-2 text-foreground">
 								{cat.title}
 							</h2>
-							<p className="text-lg text-background/80">
+							<p className="text-lg font-semibold text-foreground/80">
 								{cat.description}
 							</p>
 							{/* Decoration */}

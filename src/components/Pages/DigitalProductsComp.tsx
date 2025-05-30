@@ -3,12 +3,12 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
+	Pagination,
+	PaginationContent,
+	PaginationItem,
+	PaginationLink,
+	PaginationNext,
+	PaginationPrevious,
 } from "@/components/ui/pagination";
 import { digitalProducts } from "@/data/digital-products";
 import { cn } from "@/lib/utils";
@@ -117,7 +117,7 @@ const DigitalProductsComp = () => {
 			</div>
 
 			{/* Grid */}
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
 				{/* {filteredProducts.map((product) => ( */}
 				{paginatedProducts.map((product) => (
 					<div
@@ -171,7 +171,7 @@ const DigitalProductsComp = () => {
 										target="_blank"
 										className="text-sm px-3 py-1 rounded-full bg-primary text-white hover:bg-primary/80 transition"
 									>
-										Buy
+										Buy me 💸
 									</Link>
 								)}
 							</div>
