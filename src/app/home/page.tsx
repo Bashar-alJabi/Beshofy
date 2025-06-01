@@ -7,7 +7,7 @@ import SocialLinks from "@/components/Socials/Socials";
 
 export default function HomePage() {
 	return (
-		<>
+		<div className="relative min-h-dvh overflow-hidden">
 			<Background url="/Videos/search.mp4" />
 			<main className="relative z-10">
 				<Logo />
@@ -16,6 +16,6 @@ export default function HomePage() {
 				<Avatar />
 				<SocialLinks />
 			</main>
-		</>
+		</div>
 	);
 }

@@ -1,13 +1,13 @@
 import FallingDecorations from "@/components/Background/FallingDecorations";
 import DigitalProductsComp from "@/components/Pages/DigitalProductsComp";
 import { ThemeToggle } from "@/components/Theme/ThemeMode";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Home } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function DigitalProductsPage() {
 	return (
-		<div className="min-h-screen px-6 pt-4 pb-8 bg-gradient-to-b from-background to-background/50 text-foreground">
+		<div className="min-h-dvh px-6 pt-4 pb-8 bg-gradient-to-b from-background to-background/50 text-foreground">
 			<div className="flex items-center justify-between mb-2">
 				{/* Logo */}
 				<Link href="/home">
@@ -23,10 +23,17 @@ export default function DigitalProductsPage() {
 					{/* Back to Shop */}
 					<Link
 						href="/shop"
-						className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-background/80 backdrop-blur-md shadow-md hover:scale-105 transition"
+						className="text-foreground flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-background/80 backdrop-blur-md shadow-md hover:-rotate-2 transition-all"
 					>
 						<ArrowLeft size={16} />
 						Back to Shop
+					</Link>
+					{/* Back to Shop */}
+					<Link
+						href="/home"
+						className="w-10 h-10 flex items-center justify-center rounded-full bg-background/80 backdrop-blur-md shadow-lg hover:bg-background/80 hover:scale-105 hover:rotate-12 transition-all"
+					>
+						<Home size={16} />
 					</Link>
 					{/* Theme Toggle */}
 					<ThemeToggle />

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/pagination";
 import { digitalProducts } from "@/data/digital-products";
 import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 import { BadgeCheck, Flame, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,6 +52,7 @@ const DigitalProductsComp = () => {
 		(currentPage - 1) * itemsPerPage,
 		currentPage * itemsPerPage
 	);
+
 	return (
 		<>
 			{/* Filters */}
@@ -117,68 +119,79 @@ const DigitalProductsComp = () => {
 			</div>
 
 			{/* Grid */}
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-				{/* {filteredProducts.map((product) => ( */}
-				{paginatedProducts.map((product) => (
-					<div
-						key={product.id}
-						className="bg-foreground/5 border border-foreground/10 rounded-xl overflow-hidden relative top-0 hover:-top-1 shadow hover:shadow-lg transition-all duration-300"
-					>
-						<Image
-							src={product.image}
-							alt={product.name}
-							width={400}
-							height={300}
-							className="w-full h-28 object-cover"
-						/>
+			<AnimatePresence mode="wait">
+				<motion.div
+					key={selectedCategory}
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: -20 }}
+					transition={{ duration: 0.4 }}
+					className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12"
+				>
+					{/* {filteredProducts.map((product) => ( */}
+					{paginatedProducts.map((product) => (
+						<div
+							key={product.id}
+							className="bg-foreground/5 border border-foreground/10 rounded-xl overflow-hidden relative top-0 hover:-top-1 shadow hover:shadow-lg transition-all duration-300"
+						>
+							<Image
+								src={product.image}
+								alt={product.name}
+								width={400}
+								height={300}
+								className="w-full h-28 object-cover"
+							/>
 
-						<div className="p-4 flex flex-col gap-2">
-							<div className="flex items-center gap-2">
-								<span className="text-sm bg-foreground/10 px-2 py-0.5 rounded-full text-foreground">
-									{product.category}
-								</span>
-								{product.isNew && (
-									<span className="text-xs text-green-400 font-semibold flex items-center gap-1">
-										<BadgeCheck size={14} />
-										New
+							<div className="p-4 flex flex-col gap-2">
+								<div className="flex items-center gap-2">
+									<span className="text-sm bg-foreground/10 px-2 py-0.5 rounded-full text-foreground">
+										{product.category}
 									</span>
-								)}
-								{product.isTrending && (
-									<span className="text-xs text-orange-400 font-semibold flex items-center gap-1">
-										<Flame size={14} />
-										Trending
+									{product.isNew && (
+										<span className="text-xs text-green-400 font-semibold flex items-center gap-1">
+											<BadgeCheck size={14} />
+											New
+										</span>
+									)}
+									{product.isTrending && (
+										<span className="text-xs text-orange-400 font-semibold flex items-center gap-1">
+											<Flame size={14} />
+											Trending
+										</span>
+									)}
+								</div>
+								<h3 className="text-lg font-semibold">
+									{product.name}
+								</h3>
+								<div className="flex justify-between items-center">
+									<span className="font-medium text-foreground/80">
+										{product.isFree
+											? "Free"
+											: product.price}
 									</span>
-								)}
-							</div>
-							<h3 className="text-lg font-semibold">
-								{product.name}
-							</h3>
-							<div className="flex justify-between items-center">
-								<span className="font-medium text-foreground/80">
-									{product.isFree ? "Free" : product.price}
-								</span>
-								{product.isFree ? (
-									<a
-										href={product.downloadLink}
-										download
-										className="text-sm px-3 py-1 rounded-full bg-green-500 text-black hover:bg-green-500/80 transition"
-									>
-										Download
-									</a>
-								) : (
-									<Link
-										href={product.gumroadLink || "#"}
-										target="_blank"
-										className="text-sm px-3 py-1 rounded-full bg-primary text-white hover:bg-primary/80 transition"
-									>
-										Buy me 💸
-									</Link>
-								)}
+									{product.isFree ? (
+										<a
+											href={product.downloadLink}
+											download
+											className="text-sm px-3 py-1 rounded-full bg-green-500 text-black hover:bg-green-500/80 transition"
+										>
+											Download
+										</a>
+									) : (
+										<Link
+											href={product.gumroadLink || "#"}
+											target="_blank"
+											className="text-sm px-3 py-1 rounded-full bg-primary text-white hover:bg-primary/80 transition"
+										>
+											Buy me 🙈
+										</Link>
+									)}
+								</div>
 							</div>
 						</div>
-					</div>
-				))}
-			</div>
+					))}
+				</motion.div>
+			</AnimatePresence>
 
 			{/* Pagination */}
 			<Pagination>
@@ -242,7 +255,7 @@ const DigitalProductsComp = () => {
 			</Pagination>
 
 			{/* Freebies Section */}
-			{digitalProducts.some((p) => p.isFree) && (
+			{/* {digitalProducts.some((p) => p.isFree) && (
 				<div className="max-w-6xl mx-auto mt-16">
 					<h2 className="text-2xl font-bold mb-4">
 						🎁 Freebies Zone
@@ -281,6 +294,73 @@ const DigitalProductsComp = () => {
 							))}
 					</div>
 				</div>
+			)} */}
+
+			{/* 💎 Premium Vault */}
+			{digitalProducts.some((products) => products.isPremium) && (
+				<section className="max-w-6xl mx-auto mt-16">
+					<h2 className="text-2xl font-bold mb-6 text-foreground flex items-center gap-2">
+						💎 Premium Vault
+					</h2>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{digitalProducts
+							.filter((prod) => prod.isPremium)
+							.map((p) => (
+								<motion.div
+									key={p.id}
+									initial={{
+										opacity: 0,
+										scale: 0.9,
+										rotate: 0,
+									}}
+									whileInView={{ opacity: 1, scale: 1 }}
+									viewport={{ once: true }}
+									whileHover={{ rotate: [0, -2, 2, 0] }}
+									transition={{ duration: 0.5 }}
+									// className="relative rounded-xl p-5 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900 dark:to-yellow-800 shadow-md border border-yellow-400 overflow-hidden"
+									className="relative bg-foreground/5 rounded-xl p-5 flex flex-col gap-3 shadow-lg hover:shadow-xl"
+								>
+									{/* Effect */}
+									<motion.div
+										className="absolute inset-0 border-2 border-primary rounded-xl pointer-events-none z-10"
+										animate={{ opacity: [0.2, 0.8, 0.2] }}
+										transition={{
+											duration: 4,
+											repeat: Infinity,
+											ease: "easeInOut",
+										}}
+									/>
+									<Image
+										src={p.image}
+										alt={p.name}
+										width={300}
+										height={200}
+										className="rounded-md object-cover w-full h-30"
+									/>
+									<div className="relative z-20">
+										<h3 className="text-lg font-semibold mb-1">
+											{p.name}
+										</h3>
+										<p className="text-sm text-foreground">
+											{p.category}
+										</p>
+										<div className="flex justify-between items-center mt-1">
+											<span className="font-semibold">
+												{p.price}
+											</span>
+											<a
+												href={p.gumroadLink}
+												download
+												className="text-xs font-semibold px-4 py-2 rounded-full bg-primary text-white hover:bg-primary/80 transition"
+											>
+												Buy Now 💸
+											</a>
+										</div>
+									</div>
+								</motion.div>
+							))}
+					</div>
+				</section>
 			)}
 		</>
 	);

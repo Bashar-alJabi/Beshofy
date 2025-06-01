@@ -3,11 +3,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface FallingItem {
-    id: string;
-    emoji: string;
-    left: number;
-    delay: number;
-    duration: number;
+	id: string;
+	emoji: string;
+	left: number;
+	delay: number;
+	duration: number;
 }
 
 const emojis = ["🛒", "🎨", "🧑‍💻", "📦", "💻", "✏️", "🛍️"];
@@ -19,6 +19,16 @@ const FallingDecorations = () => {
 	const [items, setItems] = useState<FallingItem[]>([]);
 
 	useEffect(() => {
+		// Items first time 
+		const initialItems = Array.from({ length: 5 }, () => ({
+			id: crypto.randomUUID(),
+			emoji: emojis[Math.floor(Math.random() * emojis.length)],
+			left: getRandom(10, 90),
+			delay: 0,
+			duration: getRandom(15, 30),
+		}));
+		setItems(initialItems);
+		// Items each 5sec
 		const interval = setInterval(() => {
 			setItems((prev) => [
 				...prev,

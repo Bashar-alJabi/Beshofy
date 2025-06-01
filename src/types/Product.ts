@@ -7,6 +7,7 @@ export type Product = {
 	isFree: boolean;
 	isNew?: boolean;
 	isTrending?: boolean;
+	isPremium?: boolean;
 	downloadLink?: string;
 	gumroadLink?: string;
 };

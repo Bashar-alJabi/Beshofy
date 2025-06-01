@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 interface FilterChangeEvent extends CustomEvent {
     detail: {
-        filter: keyof typeof backgroundColors;
+        cat: keyof typeof backgroundColors;
     };
 }
 
@@ -22,8 +22,10 @@ export default function SmartFilesBackground() {
 
 	useEffect(() => {
 		const handler = (e: FilterChangeEvent) => {
-			if (e.detail?.filter) {
-				setActive(e.detail.filter);
+			// if (e.detail?.filter) {
+			if (e.detail?.cat) {
+				// setActive(e.detail.filter);
+				setActive(e.detail.cat);
 			}
 		};
 		window.addEventListener("filterChange", handler as EventListener);
@@ -38,7 +40,7 @@ export default function SmartFilesBackground() {
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 				transition={{ duration: 0.5 }}
-				className="absolute inset-0 z-0"
+				className="fixed inset-0 -z-10"
 				style={{
 					background: backgroundColors[active],
 					transition: "background 0.5s ease",

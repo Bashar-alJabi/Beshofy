@@ -10,6 +10,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: true,
 		isTrending: true,
+		isPremium: true,
 		gumroadLink: "https://gumroad.com/l/website-ui",
 	},
 	{
@@ -21,6 +22,7 @@ export const digitalProducts: Product[] = [
 		isFree: true,
 		isNew: true,
 		isTrending: false,
+		isPremium: false,
 		downloadLink: "/downloads/logo-pack.zip",
 	},
 	{
@@ -32,6 +34,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: false,
 		isTrending: false,
+		isPremium: true,
 		gumroadLink: "https://gumroad.com/l/poster-pack",
 	},
 	{
@@ -43,6 +46,7 @@ export const digitalProducts: Product[] = [
 		isFree: true,
 		isNew: false,
 		isTrending: true,
+		isPremium: false,
 		downloadLink: "/downloads/ui-kit.zip",
 	},
 	{
@@ -54,6 +58,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: true,
 		isTrending: true,
+		isPremium: true,
 		gumroadLink: "https://gumroad.com/l/ecommerce-template",
 	},
 	{
@@ -65,6 +70,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: false,
 		isTrending: true,
+		isPremium: true,
 		gumroadLink: "https://gumroad.com/l/brand-kit",
 	},
 	{
@@ -76,6 +82,7 @@ export const digitalProducts: Product[] = [
 		isFree: true,
 		isNew: true,
 		isTrending: false,
+		isPremium: false,
 		downloadLink: "/downloads/instagram-templates.zip",
 	},
 	{
@@ -87,6 +94,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: true,
 		isTrending: true,
+		isPremium: false,
 		gumroadLink: "https://gumroad.com/l/dashboard-kit",
 	},
 	{
@@ -98,6 +106,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: false,
 		isTrending: true,
+		isPremium: false,
 		gumroadLink: "https://gumroad.com/l/portfolio-template",
 	},
 	{
@@ -109,6 +118,7 @@ export const digitalProducts: Product[] = [
 		isFree: true,
 		isNew: true,
 		isTrending: false,
+		isPremium: false,
 		downloadLink: "/downloads/business-logos.zip",
 	},
 	{
@@ -120,6 +130,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: true,
 		isTrending: true,
+		isPremium: true,
 		gumroadLink: "https://gumroad.com/l/marketing-posters",
 	},
 	{
@@ -131,6 +142,7 @@ export const digitalProducts: Product[] = [
 		isFree: false,
 		isNew: true,
 		isTrending: true,
+		isPremium: true,
 		gumroadLink: "https://gumroad.com/l/mobile-ui-kit",
 	},
 	{
@@ -142,6 +154,7 @@ export const digitalProducts: Product[] = [
 		isFree: true,
 		isNew: false,
 		isTrending: true,
+		isPremium: false,
 		downloadLink: "/downloads/landing-page.zip",
 	},
 ];

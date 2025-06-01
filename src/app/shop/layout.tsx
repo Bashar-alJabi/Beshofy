@@ -5,9 +5,10 @@ export default function ShopLayout({ children }: { children: ReactNode }) {
 	return (
 		<ThemeProvider
 			attribute="class"
-			defaultTheme="system"
-			enableSystem
+			defaultTheme="light"
+			enableSystem={false}
 			disableTransitionOnChange
+			storageKey="shop-theme"
 		>
 			{children}
 		</ThemeProvider>
