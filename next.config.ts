@@ -7,7 +7,14 @@ const nextConfig: NextConfig = {
 	assetPrefix: "/Beshofy/",
 	images: {
 		unoptimized: true,
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: '**',
+			},
+		],
 	},
+	trailingSlash: true,
 };
 
 export default nextConfig;

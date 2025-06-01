@@ -140,6 +140,8 @@ const DigitalProductsComp = () => {
 								width={400}
 								height={300}
 								className="w-full h-28 object-cover"
+								// placeholder="blur"
+								// blurDataURL="/placeholder.png" // (1–5KB)
 							/>
 
 							<div className="p-4 flex flex-col gap-2">

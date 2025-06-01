@@ -5,8 +5,7 @@ import * as React from "react";
 
 export function ThemeProvider({
 	children,
-	storageKey = "theme",
 	...props
-}: React.ComponentProps<typeof NextThemesProvider> & { storageKey?: string }) {
-	return <NextThemesProvider storageKey={storageKey} {...props}>{children}</NextThemesProvider>;
+}: React.ComponentProps<typeof NextThemesProvider>) {
+	return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }

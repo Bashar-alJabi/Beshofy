@@ -121,7 +121,7 @@ export default function SmartFilesContent() {
 						placeholder="Search for a file..."
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
-						className="w-full pl-10 pr-4 py-4.5 rounded-sm bg-foreground/5 placeholder:text-foreground/50 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+						className="w-full pl-10 pr-4 py-4.5 rounded-sm bg-foreground/5 placeholder:text-foreground/50 border border-foreground/10 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
 					/>
 				</div>
 			</div>

@@ -139,7 +139,6 @@
   --sidebar-ring: #9d4edd;
 }
 
-
 @layer base {
   * {
     @apply border-border outline-ring/50 box-border;

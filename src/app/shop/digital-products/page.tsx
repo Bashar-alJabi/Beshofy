@@ -1,12 +1,19 @@
 import FallingDecorations from "@/components/Background/FallingDecorations";
 import DigitalProductsComp from "@/components/Pages/DigitalProductsComp";
 import { ThemeToggle } from "@/components/Theme/ThemeMode";
+import { ThemeProvider } from "@/context/Theme/theme-provider";
 import { ArrowLeft, Home } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function DigitalProductsPage() {
 	return (
+		<ThemeProvider
+			attribute="class"
+			defaultTheme="system"
+			disableTransitionOnChange
+			enableSystem
+		>
 		<div className="min-h-dvh px-6 pt-4 pb-8 bg-gradient-to-b from-background to-background/50 text-foreground">
 			<div className="flex items-center justify-between mb-2">
 				{/* Logo */}
@@ -56,5 +63,6 @@ export default function DigitalProductsPage() {
 			{/* Falling Decoration */}
 			<FallingDecorations />
 		</div>
+		</ThemeProvider>
 	);
 }
