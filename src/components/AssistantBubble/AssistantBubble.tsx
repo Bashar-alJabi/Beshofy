@@ -21,7 +21,7 @@ export default function AssistantBubble() {
 			initial={{ x: -20, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
-			className="fixed top-1/2 -translate-y-1/2 left-8 z-50">
+			className="fixed top-1/2 -translate-y-1/2 left-8 md:left-12 z-50">
 			<AnimatePresence mode="wait">
 				{open && (
 					<>
@@ -36,7 +36,7 @@ export default function AssistantBubble() {
                                 ease: "easeOut"
                             }}
 							// transition={{ type: "spring", stiffness: 300 }}
-							className="absolute left-0 bg-background/70 text-foreground px-4 py-2 rounded-xl shadow-md border backdrop-blur-sm text-sm whitespace-nowrap"
+							className="absolute left-0 bg-[#f9f7fd]/70 text-[#1e1b2e] px-4 py-2 rounded-xl shadow-md backdrop-blur-sm text-sm whitespace-nowrap"
 						>
 							💬 Hey <span className="text-primary font-semibold">{userName}</span>! Lost in ideas? I’m listening 🌀
 						</motion.div>
@@ -54,7 +54,7 @@ export default function AssistantBubble() {
 									duration: 0.2,
 									ease: "easeOut"
 								}}
-								className="bg-background/90 text-foreground px-4 py-2 rounded-full shadow border backdrop-blur-sm flex items-center gap-2 whitespace-nowrap"
+								className="bg-[#f9f7fd]/90 text-[#1e1b2e] px-4 py-2 rounded-full shadow backdrop-blur-sm flex items-center gap-2 whitespace-nowrap"
 							>
 								<Send className="w-5 h-5" />
 								<span className="text-sm">Let&apos;s Chat</span>
@@ -67,7 +67,7 @@ export default function AssistantBubble() {
 			{/* Toggle Button */}
 			<button
 				onClick={() => setOpen(!open)}
-				className="w-14 h-14 rounded-full bg-gradient-to-bl from-primary to-primary/30 text-background backdrop-blur-lg flex items-center justify-center shadow-lg hover:scale-105 transition"
+				className="w-14 h-14 rounded-full bg-gradient-to-bl from-primary to-primary/30 text-[#f9f7fd] backdrop-blur-lg flex items-center justify-center shadow-lg hover:scale-105 transition"
 			>
                 {open ? <MessageSquareX size={24} /> : <MessageSquare size={24} />}
 			</button>

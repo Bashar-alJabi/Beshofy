@@ -63,20 +63,20 @@ export default function ContactPage() {
 	};
 
 	return (
-		<motion.div
+		<motion.section
 			initial={{ opacity: 0, scale: 0.95 }}
 			animate={{ opacity: 1, scale: 1 }}
 			transition={{ duration: 0.6 }}
 			className="fixed inset-0 flex items-center justify-center"
 		>
-			<div className="relative bg-gradient-to-br from-background/5 to-background/10 border border-background/10 backdrop-blur-lg shadow-2xl px-6 sm:px-10 py-8 rounded-[2.5rem] ring-1 ring-background/10 max-w-xl w-full mx-4 group">
+			<div className="relative bg-gradient-to-br from-[#f9f7fd]/5 to-[#f9f7fd]/10 border border-[#f9f7fd]/10 backdrop-blur-lg shadow-2xl px-6 sm:px-10 py-8 rounded-[2.5rem] ring-1 ring-[#f9f7fd]/10 max-w-xl w-full mx-4 group">
 				{!sent ? (
 					<>
 						<motion.h1
 							initial={{ y: -10, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
 							transition={{ delay: 0.2 }}
-							className="text-xl sm:text-2xl text-background font-semibold mb-6 text-center"
+							className="text-xl sm:text-2xl text-[#f9f7fd] font-semibold mb-6 text-center"
 						>
 							Got questions? Weird product ideas? Just say hi! 👋
 						</motion.h1>
@@ -90,7 +90,7 @@ export default function ContactPage() {
 								placeholder="🧑 Your Name"
 								required
 								onChange={handleTyping}
-								className="bg-foreground/10 border border-white/10 rounded-xl px-4 py-3 text-background placeholder:text-background/70 focus:ring-2 focus:ring-primary/60 focus:outline-none transition"
+								className="bg-[#1e1b2e]/10 border border-white/10 rounded-xl px-4 py-3 text-[#f9f7fd] placeholder:text-[#f9f7fd]/70 focus:ring-2 focus:ring-primary/60 focus:outline-none transition"
 								/>
 							<Input
 								name="email_id"
@@ -98,16 +98,16 @@ export default function ContactPage() {
 								placeholder="📧 Email Address"
 								required
 								onChange={handleTyping}
-								className="bg-foreground/10 border border-background/10 rounded-xl px-4 py-3 text-background placeholder:text-background/70 focus:ring-2 focus:ring-primary/60 focus:outline-none transition"
+								className="bg-[#1e1b2e]/10 border border-[#f9f7fd]/10 rounded-xl px-4 py-3 text-[#f9f7fd] placeholder:text-[#f9f7fd]/70 focus:ring-2 focus:ring-primary/60 focus:outline-none transition"
 								/>
 							<Textarea
 								name="message_content"
 								placeholder="💬 What's on your mind?"
 								required
 								onChange={handleTyping}
-								className="bg-foreground/10 border border-background/10 rounded-2xl px-4 py-3 text-background placeholder:text-background/70 min-h-[120px] focus:ring-2 focus:ring-primary/60 focus:outline-none transition"
+								className="bg-[#1e1b2e]/10 border border-[#f9f7fd]/10 rounded-2xl px-4 py-3 text-[#f9f7fd] placeholder:text-[#f9f7fd]/70 min-h-[120px] focus:ring-2 focus:ring-primary/60 focus:outline-none transition"
 								/>
-							<Button type="submit"   className="w-full mt-2 rounded-full bg-primary text-background hover:bg-primary/80 transition-all shadow-lg shadow-primary/20"
+							<Button type="submit"   className="w-full mt-2 rounded-full bg-primary text-[#f9f7fd] hover:bg-primary/80 transition-all shadow-lg shadow-primary/20"
 							>
 								Let it fly 🕊️
 							</Button>
@@ -117,7 +117,7 @@ export default function ContactPage() {
 					<motion.div
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0 }}
-						className="text-center text-foreground text-xl font-bold space-y-4"
+						className="text-center text-[#1e1b2e] text-xl font-bold space-y-4"
 					>
 						<p>That was lovely. We’re on it 🫶</p>
 						<p>Response is bubbling...🧪</p>
@@ -139,13 +139,13 @@ export default function ContactPage() {
 								damping: 20,
 								duration: 0.4 
 							}}
-							className="absolute -top-4 left-1/2 -translate-x-1/2 text-sm text-background bg-primary px-3 py-1 rounded-full shadow"
+							className="absolute -top-4 left-1/2 -translate-x-1/2 text-sm text-[#f9f7fd] bg-primary px-3 py-1 rounded-full shadow"
 						>
 							{currentPhrase}
 						</motion.div>
 					)}
 				</AnimatePresence>
 			</div>
-		</motion.div>
+		</motion.section>
 	);
 }

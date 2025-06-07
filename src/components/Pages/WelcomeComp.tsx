@@ -26,8 +26,15 @@ const WelcomeComp = () => {
 			}, 2500);
 		}
 	};
+
+	const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+		if (e.key === 'Enter') {
+			handleSubmit();
+		}
+	};
+
 	return (
-		<motion.div
+		<motion.section
 			key="welcome-screen"
 			initial={{ opacity: 0, scale: 0.95 }}
 			animate={
@@ -58,10 +65,10 @@ const WelcomeComp = () => {
 							duration: 0.3,
 							ease: "easeOut",
 						}}
-						className="text-4xl lg:text-5xl font-bold text-foreground  text-center"
+						className="text-4xl lg:text-5xl font-bold text-[#1e1b2e] text-center"
 					>
 						Welcome to{" "}
-						<span className="text-primary-foreground">Beshofy</span>
+						<span className="text-[#f9f7fd]">Beshofy</span>
 					</motion.h1>
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -76,7 +83,8 @@ const WelcomeComp = () => {
 							placeholder="How should we call you?"
 							value={name}
 							onChange={(e) => setName(e.target.value)}
-							className="max-w-md lg:w-sm text-background placeholder:text-background/80"
+							onKeyPress={handleKeyPress}
+							className="max-w-md lg:w-sm text-[#f9f7fd] placeholder:text-[#f9f7fd]/80"
 						/>
 					</motion.div>
 					<motion.div
@@ -90,7 +98,7 @@ const WelcomeComp = () => {
 					>
 						<motion.button
 							onClick={handleSubmit}
-							className="bg-primary text-primary-foreground font-semibold px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/70"
+							className="bg-primary text-[#f9f7fd] font-semibold px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/70"
 							whileHover={{ scale: 1.02 }}
 							whileTap={{ scale: 0.6 }}
 							// transition={{
@@ -99,7 +107,7 @@ const WelcomeComp = () => {
 							// 	damping: 17,
 							// }}
 						>
-							I’m Ready!
+							I&apos;m Ready!
 						</motion.button>
 					</motion.div>
 				</motion.div>
@@ -120,9 +128,9 @@ const WelcomeComp = () => {
 					{/* <p className="text-foreground">
 								it&apos;s shopping o&apos;clock
 							</p> */}
-					<p className="text-foreground">
+					<p className="text-[#f9f7fd]">
 						Hey{" "}
-						<span className="text-primary-foreground">{name}</span>{" "}
+						<span className="text-primary">{name}</span>{" "}
 						Hope your bag can handle this
 					</p>
 				</motion.div>
@@ -132,12 +140,12 @@ const WelcomeComp = () => {
 			<Button variant={"link"}>
 				<Link
 					href={"/home"}
-					className="absolute bottom-8 text-lg text-foreground underline cursor-pointer hover:-rotate-10 transition"
+					className="absolute bottom-8 text-lg text-[#1e1b2e] underline cursor-pointer hover:-rotate-10 transition"
 				>
 					Skip
 				</Link>
 			</Button>
-		</motion.div>
+		</motion.section>
 	);
 };
 

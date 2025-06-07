@@ -18,7 +18,7 @@ const categories = [
 
 const Categories = () => {
 	return (
-		<div className="flex items-center justify-center min-h-screen px-4">
+		<section className="flex items-center justify-center min-h-screen px-4">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl text-center">
 				{categories.map((cat, i) => (
 					<Link href={cat.link} key={i}>
@@ -31,12 +31,12 @@ const Categories = () => {
 							}}
 							whileHover={{ scale: 1.05, rotate: -1 }}
 							whileTap={{ scale: 0.95 }}
-							className="cursor-pointer backdrop-blur-sm bg-background/10 border border-background/20 rounded-xl rounded-ee-full rounded-ss-full p-6 shadow-xl hover:shadow-2xl text-background relative overflow-hidden"
+							className="cursor-pointer backdrop-blur-sm bg-[#f9f7fd]/10 border border-[#f9f7fd]/20 rounded-xl rounded-ee-full rounded-ss-full p-6 shadow-xl hover:shadow-2xl text-[#f9f7fd] relative overflow-hidden"
 						>
-							<h2 className="text-3xl font-bold mb-2 text-foreground">
+							<h2 className="text-3xl font-bold mb-2 text-[#1e1b2e]">
 								{cat.title}
 							</h2>
-							<p className="text-lg font-semibold text-foreground/80">
+							<p className="text-lg font-semibold text-[#1e1b2e]/80">
 								{cat.description}
 							</p>
 							{/* Decoration */}
@@ -45,7 +45,7 @@ const Categories = () => {
 					</Link>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 };
 

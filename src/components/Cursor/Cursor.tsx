@@ -41,8 +41,8 @@ export default function CustomCursor() {
 					repeat: Infinity,
 					ease: "easeInOut",
 				}}
-				className={`w-6 h-6 rounded-full backdrop-blur border border-background/30 transition-all duration-300 ${
-					isHovering ? "bg-background/20 mix-blend-difference" : "bg-background/10"
+				className={`w-6 h-6 rounded-full backdrop-blur border border-[#f9f7fd]/30 transition-all duration-300 ${
+					isHovering ? "bg-[#f9f7fd]/20 mix-blend-difference" : "bg-[#f9f7fd]/10"
 				}`}
 			/>
 		</motion.div>

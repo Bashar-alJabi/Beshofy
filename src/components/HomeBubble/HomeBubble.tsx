@@ -12,7 +12,7 @@ const HomeBubble = () => {
 				transition={{ type: "spring", stiffness: 200 }}
 				whileHover={{ scale: 1.1, rotate: -10 }}
 				whileTap={{ scale: 0.95 }}
-				className="bg-primary text-background w-14 h-14 rounded-full shadow-lg flex items-center justify-center z-50"
+				className="bg-primary text-[#f9f7fd] w-14 h-14 rounded-full shadow-lg flex items-center justify-center z-50"
 			>
 				<House />
 			</motion.button>

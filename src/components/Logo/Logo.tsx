@@ -21,7 +21,7 @@ export default function Logo() {
 			className="fixed top-8 left-1/2 -translate-x-1/2 z-50"
 		>
 			<Image
-				src="/Logo/Beshofy-Logo.png"
+				src="/Logo/BeshoFY-Logo.png"
 				alt="Beshofy Logo"
 				width={130}
 				height={130}
@@ -29,9 +29,9 @@ export default function Logo() {
 				priority
 			/>
 			{userName !== "" && (
-				<p className="text-center font-semibold text-foreground">
+				<p className="text-center font-semibold text-[#1e1b2e]">
 					with{" "}
-					<span className="text-background">{userName}fy</span>
+					<span className="text-[#f9f7fd]">{userName}fy</span>
 					{/* {userName !== 'You' && <span>fy</span>} */}
 				</p>
 			)}

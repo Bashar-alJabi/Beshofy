@@ -95,7 +95,7 @@ export default function Avatar() {
 	}, [messages.length]);
 
 	return (
-		<div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
+		<section className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
 			<motion.img
 				src="/Avatar/Besho.png"
 				alt="Avatar"
@@ -108,10 +108,10 @@ export default function Avatar() {
 				key={index}
 				initial={{ opacity: 0, y: 10 }}
 				animate={{ opacity: 1, y: 0 }}
-				className="max-w-xs sm:max-w-sm px-6 py-2 text-foreground font-semibold rounded-full text-center text-sm shadow-xl border border-background/20 bg-background/20 backdrop-blur-md relative overflow-hidden"
+				className="max-w-xs sm:max-w-sm px-6 py-2 text-[#1e1b2e] font-semibold rounded-full text-center text-sm shadow-xl border border-[#f9f7fd]/20 bg-[#f9f7fd]/20 backdrop-blur-md relative overflow-hidden"
 			>
 				{messages[index]}
 			</motion.div>
-		</div>
+		</section>
 	);
 }
